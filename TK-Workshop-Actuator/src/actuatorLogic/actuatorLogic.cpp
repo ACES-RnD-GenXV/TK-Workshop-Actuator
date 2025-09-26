@@ -8,22 +8,14 @@ void actuatorOnWriteLogic(std::string value)
 
         if (value.compare("1") == 0)
         {
-            Serial.println("Masuk");
-            tone(BUZZER_PIN, 175*2);
+            Serial.println("ON");
             digitalWrite(LED1, HIGH);
-            delay(1000); // buzz for 500ms
-            analogWrite(BUZZER_PIN, 0);
-            digitalWrite(LED1, LOW);
             Serial.println("Masuk selesai");
         }
         else if (value.compare("0") == 0)
         {
-            Serial.println("Masuk");
-            tone(BUZZER_PIN, 110);
-            digitalWrite(LED2, HIGH);
-            delay(1000); // buzz for 500ms
-            analogWrite(BUZZER_PIN, 0);
-            digitalWrite(LED2, LOW);
+            Serial.println("OFF");
+            digitalWrite(LED1, LOW);
             Serial.println("Masuk selesai");
         }
         else
